@@ -15,3 +15,5 @@ if [ -n "$(gpgconf --list-options gpg-agent | \
       awk -F: '/^enable-ssh-support:/{ print $10 }')" ]; then
     export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 fi
+
+sudo ln -s $DOTFILES/etc/X11/Xsession.d/90gpg-agent /etc/X11/Xsession.d/90gpg-agent

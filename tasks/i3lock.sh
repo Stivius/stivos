@@ -6,3 +6,5 @@ git clone https://github.com/Raymo111/i3lock-color.git
 pushd i3lock-color
 ./install-i3lock-color.sh
 popd
+
+sudo ln -s $DOTFILES/etc/systemd/system/lock@.serivce /etc/systemd/system/lock@.service

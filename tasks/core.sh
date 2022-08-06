@@ -16,14 +16,19 @@ sudo apt install -y \
     pulsemixer \
     playerctl \
     blueman \
-    maim \
     git \
     zathura \
     g++ \
     apt-transport-https \
     feh \
     incronwait \
-    picom
+    picom \
+    cargo \
+    fd-find
+
+sudo mkdir -p /etc/sudoers.d
+sudo mkdir -p /etc/modprobe.d
+sudo mkdir -p /etc/udev/rules.d
 
 mkdir $HOME/Projects
 pushd $HOME/Projects
