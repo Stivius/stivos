@@ -1,6 +1,7 @@
 #!/bin/bash
 
 sudo apt install -y brightnessctl ddcutil
+# FIXME user
 sudo usermod -a -G i2c user 
 
 sudo ln -s $DOTFILES/etc/sudoers.d/brightnessctl /etc/sudoers.d/brightnessctl

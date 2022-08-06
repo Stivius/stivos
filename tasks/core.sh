@@ -3,21 +3,12 @@
 sudo apt update
 sudo apt install -y \
     neofetch \
-    xfce4-power-manager \
-    redshift \
-    pass \
     jq \
-    pass-extension-otp \
-    gpg \
     xdotool \
     ripgrep \
-    xautolock \
     x11-xserver-utils \
-    pulsemixer \
-    playerctl \
     blueman \
     git \
-    zathura \
     g++ \
     apt-transport-https \
     feh \
