@@ -2,4 +2,4 @@
 
 sudo apt install -y redshift
 
-# FIXME config
+rm -rf $HOME/.config/redshift && ln -s $DOTFILES/.config/redshift $HOME/.config/redshift

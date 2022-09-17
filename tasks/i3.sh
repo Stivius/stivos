@@ -1,1 +1,12 @@
-# FIXME
+#!/bin/bash
+
+wget -O- https://baltocdn.com/i3-window-manager/signing.asc | gpg --dearmor > /etc/apt/trusted.gpg.d/i3wm-signing.gpg
+
+echo "deb https://baltocdn.com/i3-window-manager/i3/i3-autobuild/ all main" | sudo tee /etc/apt/sources.list.d/i3-autobuild.list
+
+sudo apt update && sudo apt install -y i3
+rm -rf $HOME/.config/i3 && ln -s $DOTFILES/.config/i3 $HOME/.config/i3
+rm -f $HOME/.xinitrc && ln -s $HOME/dotfiles/.xinitrc $HOME/.xinitrc
+
+sudo systemctl disable gdm
+sudo apt-get -y remove ubuntu-desktop

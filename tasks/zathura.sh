@@ -1,3 +1,3 @@
 sudo apt install -y zathura
 
-# FIXME config
+rm -rf $HOME/.config/zathura && ln -s $DOTFILES/.config/zathura $HOME/.config/zathura

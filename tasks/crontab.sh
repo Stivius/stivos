@@ -1,1 +1,3 @@
-# FIXME
+#!/bin/bash
+
+crontab $DOTFILES/crontab
