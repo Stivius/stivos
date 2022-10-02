@@ -16,16 +16,19 @@ sudo apt install -y \
     cargo \
     fd-find \
     vim
+echo 'Packages have been installed'
 
 sudo mkdir -p /etc/sudoers.d
 sudo mkdir -p /etc/modprobe.d
 sudo mkdir -p /etc/udev/rules.d
-sudo mkdir -p $HOME/.local/bin
+mkdir -p $HOME/.local/bin
 
 mkdir $HOME/Projects
 pushd $HOME/Projects
 
-git clone git@github-Stivius:Stivius/dotfiles.git
+echo 'Directories have been created'
+
+rm -rf dotfiles && git clone git@github-Stivius:Stivius/dotfiles.git
 ln -s $HOME/Projects/dotfiles $HOME/dotfiles
 ln -s $HOME/Projects/dotfiles/scripts $HOME/scripts
 
@@ -41,5 +44,7 @@ source $HOME/.profile
 ln -s $SCRIPTS/commit_git $HOME/.local/bin/commit_git
 ln -s $SCRIPTS/sync_git $HOME/.local/bin/sync_git
 ln -s $SCRIPTS/watch_dir $HOME/.local/bin/watch_dir
+
+echo 'Symlinks have been created'
 
 popd

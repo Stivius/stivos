@@ -2,7 +2,7 @@
 
 pushd $HOME
 
-git clone git@github.com:Stivius/todo.txt.git
+git clone git@github-Stivius:Stivius/todo.txt.git
 mv todo.txt .todo
 
 ln -s $HOME/.todo/todo.sh $HOME/.local/bin/todo.sh

@@ -8,5 +8,8 @@ sudo apt update && sudo apt install -y i3
 rm -rf $HOME/.config/i3 && ln -s $DOTFILES/.config/i3 $HOME/.config/i3
 rm -f $HOME/.xinitrc && ln -s $HOME/dotfiles/.xinitrc $HOME/.xinitrc
 
+# sudo rm -f /etc/X11/Xsession.d/90gpg-agent && sudo ln -s $HOME/Projects/dotfiles/etc/X11/Xsession.d/90gpg-agent /etc/X11/Xsession.d/90gpg-agent
+# echo 'Symlink to 90gpg-agent created'
+
 sudo systemctl disable gdm
 sudo apt-get -y remove ubuntu-desktop

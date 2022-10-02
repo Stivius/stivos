@@ -2,7 +2,7 @@
 
 pushd $HOME
 
-git clone git@github.com:Stivius/finances.git
+git clone git@github-Stivius:Stivius/finances.git
 mv finances .finances
 
 sudo apt-get install -y build-essential cmake doxygen \

@@ -2,7 +2,7 @@
 
 pushd $HOME
 
-git clone git@github.com:Stivius/productivity.git
+git clone git@github-Stivius:Stivius/productivity.git
 mv productivity .productivity
 
 npm i -g @stivius/productivity

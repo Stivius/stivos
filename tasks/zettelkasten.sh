@@ -2,6 +2,6 @@
 
 pushd $HOME
 
-git clone git@github.com:Stivius/zettelkasten.git
+git clone git@github-Stivius:Stivius/zettelkasten.git
 
 popd

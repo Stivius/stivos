@@ -10,9 +10,14 @@ if [[ -z "$WORK_KEYGRIP" ]]; then
   exit
 fi
 
+if [[ -z "$SSH_DIR" ]]; then
+  echo 'Specify SSH_DIR with keys and config'
+  exit
+fi
+
 keygrips=("$PERSONAL_KEYGRIP" "$WORK_KEYGRIP")
 
-if grep -q "enable-ssh-support" $HOME/.gnupg/gpg-agent.conf; then
+if grep -s -q "enable-ssh-support" $HOME/.gnupg/gpg-agent.conf; then
   echo 'enable-ssh-support already added in gpg-agent.conf'
 else
   echo enable-ssh-support >> $HOME/.gnupg/gpg-agent.conf
@@ -20,7 +25,7 @@ else
 fi
 
 for key in ${keygrips[@]}; do
-  if grep -q "$key" $HOME/.gnupg/sshcontrol then
+  if grep -s -q "$key" $HOME/.gnupg/sshcontrol; then
     echo "$key already added in sshcontrol"
   else
     echo "$key" >> ~/.gnupg/sshcontrol
@@ -30,4 +35,6 @@ done
 
 source ./tasks/gpg-ssh-env.sh
 
-sudo rm -f /etc/X11/Xsession.d/90gpg-agent && sudo ln -s $DOTFILES/etc/X11/Xsession.d/90gpg-agent /etc/X11/Xsession.d/90gpg-agent
+rm -rf $HOME/.ssh && cp -r $SSH_DIR $HOME
+echo 'SSH keys and config are copied'
+
