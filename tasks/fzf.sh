@@ -1,4 +1,11 @@
 #!/bin/bash
+source ../utils/utils.sh
 
-git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-~/.fzf/install
+pushd $HOME
+
+git_clone_repo https://github.com/junegunn/fzf.git "--depth=1"
+mv fzf .fzf
+$HOME/.fzf/install
+
+popd
+

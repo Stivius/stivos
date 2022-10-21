@@ -1,4 +1,5 @@
 #!/bin/bash
+source ../utils/utils.sh
 
 sudo apt update
 sudo apt install -y \
@@ -28,22 +29,22 @@ pushd $HOME/Projects
 
 echo 'Directories have been created'
 
-rm -rf dotfiles && git clone git@github-Stivius:Stivius/dotfiles.git
-ln -s $HOME/Projects/dotfiles $HOME/dotfiles
-ln -s $HOME/Projects/dotfiles/scripts $HOME/scripts
+git_clone_private_repo dotfiles
+create_symlink dotfiles $HOME/Projects/ $HOME
+create_symlink scripts $HOME/Projects/dotfiles $HOME
 
-rm -f $HOME/.bashrc && ln -s $HOME/dotfiles/.bashrc $HOME/.bashrc
-rm -f $HOME/.profile && ln -s $HOME/dotfiles/.profile $HOME/.profile
-rm -f $HOME/.inputrc && ln -s $HOME/dotfiles/.inputrc $HOME/.inputrc
-rm -f $HOME/.Xresources && ln -s $HOME/dotfiles/.Xresources $HOME/.Xresources
-rm -f $HOME/.gitconfig && ln -s $HOME/dotfiles/.gitconfig $HOME/.gitconfig
+create_symlink .bashrc $HOME/dotfiles $HOME
+create_symlink .profile $HOME/dotfiles $HOME
+create_symlink .inputrc $HOME/dotfiles $HOME
+create_symlink .Xresources $HOME/dotfiles $HOME
+create_symlink .gitconfig $HOME/dotfiles $HOME
 
 source $HOME/.bashrc
 source $HOME/.profile
 
-ln -s $SCRIPTS/commit_git $HOME/.local/bin/commit_git
-ln -s $SCRIPTS/sync_git $HOME/.local/bin/sync_git
-ln -s $SCRIPTS/watch_dir $HOME/.local/bin/watch_dir
+symlink_bin commit_git $SCRIPTS
+symlink_bin sync_git $SCRIPTS
+symlink_bin watch_git $SCRIPTS
 
 echo 'Symlinks have been created'
 

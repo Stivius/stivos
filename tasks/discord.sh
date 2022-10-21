@@ -1,5 +1,4 @@
 #!/bin/bash
+source ../utils/utils.sh
 
-wget https://dl.discordapp.net/apps/linux/0.0.18/discord-0.0.18.deb
-sudo apt install -y ./discord-0.0.18.deb
-rm ./discord-0.0.18.deb
+install_deb_package https://dl.discordapp.net/apps/linux/0.0.20/discord-0.0.20.deb

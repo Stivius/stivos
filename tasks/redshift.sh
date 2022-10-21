@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source ../utils/utils.sh
+
 sudo apt install -y redshift
 
-rm -rf $HOME/.config/redshift && ln -s $DOTFILES/.config/redshift $HOME/.config/redshift
+symlink_config redshift

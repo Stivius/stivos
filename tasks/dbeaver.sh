@@ -1,5 +1,4 @@
 #!/bin/bash
+source ../utils/utils.sh
 
-wget https://dbeaver.io/files/dbeaver-ce_latest_amd64.deb
-sudo apt install -y ./dbeaver-ce_latest_amd64.deb
-rm ./dbeaver-ce_latest_amd64.deb
+install_deb_package https://dbeaver.io/files/dbeaver-ce_latest_amd64.deb

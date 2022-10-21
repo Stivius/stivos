@@ -1,8 +1,11 @@
+#!/bin/bash
+source ../utils/utils.sh
+
 sudo apt-get install -y wireguard
 
 sudo mkdir -p /etc/wireguard/
 
 sudo cp $DOTFILES/etc/wireguard/wg0.conf /etc/wireguard/wg0.conf
 
-ln -s $SCRIPTS/system/vpn_control $HOME/.local/bin/vpn_control
-ln -s $SCRIPTS/polybar/polybar_vpn $HOME/.local/bin/polybar_vpn
+symlink_bin vpn_control $SCRIPTS/system
+symlink_bin polybar_vpn $SCRIPTS/polybar

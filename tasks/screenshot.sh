@@ -1,3 +1,6 @@
+#!/bin/bash
+source ../utils/utils.sh
+
 sudo apt install -y maim
 
-ln -s $SCRIPTS/system/take_screenshot $HOME/.local/bin/take_screenshot
+symlink_bin take_screenshot $SCRIPTS/system

@@ -2,7 +2,7 @@
 
 pushd $HOME
 
-git clone --depth=1 https://github.com/adi1090x/polybar-themes.git
+git_clone_repo https://github.com/adi1090x/polybar-themes.git "--depth=1"
 
 pushd polybar-themes
 

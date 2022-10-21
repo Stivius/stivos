@@ -1,9 +1,10 @@
 #!/bin/bash
+source ../utils/utils.sh
 
 pushd $HOME/Projects
 
-git clone git@github-Stivius:Stivius/ledger-parsers.git
-git clone git@github-Stivius:Stivius/plain-text-productivity.git
-git clone git@github-Stivius:Stivius/obsidian-clipper.git
+git_clone_private_repo ledger-parsers
+git_clone_private_repo plain-text-productivity
+git_clone_private_repo obsidian-clipper
 
 popd

@@ -1,14 +1,15 @@
 #!/bin/bash
+source ../utils/utils.sh
 
 pushd $HOME
 
-git clone https://github.com/dunst-project/dunst.git
+git_clone_repo https://github.com/dunst-project/dunst.git
 
 pushd dunst
 
 make
 sudo make install
-rm -rf $HOME/.config/dunst && ln -s $DOTFILES/.config/dunst $HOME/.config/dunst
+symlink_config dunst
 
 popd
 rm -rf ./dunst

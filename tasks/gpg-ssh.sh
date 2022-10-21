@@ -1,23 +1,24 @@
 #!/bin/bash
+source ../utils/utils.sh
 
-if [[ -z "$PERSONAL_KEYGRIP" ]]; then
+if ! variable_exists "$PERSONAL_KEYGRIP"; then
   echo 'Specify PERSONAL_KEYGRIP of auth key'
   exit
 fi
 
-if [[ -z "$WORK_KEYGRIP" ]]; then
+if ! variable_exists "$WORK_KEYGRIP"; then
   echo 'Specify WORK_KEYGRIP of auth key'
   exit
 fi
 
-if [[ -z "$SSH_DIR" ]]; then
+if ! variable_exists "$SSH_DIR"; then
   echo 'Specify SSH_DIR with keys and config'
   exit
 fi
 
 keygrips=("$PERSONAL_KEYGRIP" "$WORK_KEYGRIP")
 
-if grep -s -q "enable-ssh-support" $HOME/.gnupg/gpg-agent.conf; then
+if file_contains $HOME/.gnupg/gpg-agent.conf "enable-ssh-support"; then
   echo 'enable-ssh-support already added in gpg-agent.conf'
 else
   echo enable-ssh-support >> $HOME/.gnupg/gpg-agent.conf
@@ -25,7 +26,7 @@ else
 fi
 
 for key in ${keygrips[@]}; do
-  if grep -s -q "$key" $HOME/.gnupg/sshcontrol; then
+  if file_contains $HOME/.gnupg/sshcontrol "$key"; then
     echo "$key already added in sshcontrol"
   else
     echo "$key" >> ~/.gnupg/sshcontrol

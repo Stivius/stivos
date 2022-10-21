@@ -1,6 +1,4 @@
 #!/bin/bash
+source ../utils/utils.sh
 
-wget https://cdn.cloudflare.steamstatic.com/client/installer/steam.deb
-sudo apt install -y ./steam.deb
-rm ./steam.deb
-
+install_deb_package https://cdn.cloudflare.steamstatic.com/client/installer/steam.deb

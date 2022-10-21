@@ -1,7 +1,10 @@
+#!/bin/bash
+source ../utils/utils.sh
+
 sudo apt install -y playerctl pulsemixer 
 
-ln -s $SCRIPTS/system/change_volume $HOME/.local/bin/change_volume
-ln -s $SCRIPTS/system/mute_volume $HOME/.local/bin/mute_volume
-ln -s $SCRIPTS/polybar/polybar_micro $HOME/.local/bin/polybar_micro
-ln -s $SCRIPTS/polybar/polybar_music $HOME/.local/bin/polybar_music
-ln -s $SCRIPTS/polybar/polybar_play_pause $HOME/.local/bin/polybar_play_pause
+symlink_bin change_volume $SCRIPTS/system
+symlink_bin mute_volume $SCRIPTS/system
+symlink_bin polybar_micro $SCRIPTS/polybar
+symlink_bin polybar_music $SCRIPTS/polybar
+symlink_bin polybar_play_pause $SCRIPTS/polybar

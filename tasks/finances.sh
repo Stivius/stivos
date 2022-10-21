@@ -1,8 +1,9 @@
 #!/bin/bash
+source ../utils/utils.sh
 
 pushd $HOME
 
-git clone git@github-Stivius:Stivius/finances.git
+git_clone_private_repo finances
 mv finances .finances
 
 sudo apt-get install -y build-essential cmake doxygen \
@@ -11,7 +12,7 @@ sudo apt-get install -y build-essential cmake doxygen \
      libboost-iostreams-dev libboost-python-dev libboost-regex-dev \
      libboost-test-dev libedit-dev libgmp3-dev libmpfr-dev texinfo tzdata
 
-git clone https://github.com/ledger/ledger
+git_clone_repo https://github.com/ledger/ledger
 pushd ledger
 cmake -DCMAKE_INSTALL_PREFIX= .
 make -j$(nproc)
