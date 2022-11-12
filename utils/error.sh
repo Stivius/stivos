@@ -1,6 +1,6 @@
 #!/bin/bash
 
-exec 1>log.out 2>&1
+exec 1>>log.out 2>&1
 
 error() {
   local last_exit_status="$?"

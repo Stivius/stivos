@@ -1,6 +1,6 @@
 #!/bin/bash
-source ../utils/error.sh
-source ../utils/utils.sh
+source $(dirname $(realpath -s $0))/../utils/error.sh
+source $(dirname $(realpath -s $0))/../utils/utils.sh
 
 if ! variable_exists "$PERSONAL_KEYGRIP"; then
   echo 'Specify PERSONAL_KEYGRIP of auth key'
@@ -35,7 +35,7 @@ for key in ${keygrips[@]}; do
   fi
 done
 
-source ./tasks/gpg-ssh-env.sh
+source $(dirname $(realpath -s $0))/02-gpg-ssh-env.sh
 
 rm -rf $HOME/.ssh && cp -r $SSH_DIR $HOME
 echo 'SSH keys and config are copied'

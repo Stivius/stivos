@@ -2,8 +2,6 @@
 source $(dirname $(realpath -s $0))/../utils/error.sh
 source $(dirname $(realpath -s $0))/../utils/utils.sh
 
-sudo apt install -y gpg
+sudo apt install -y maim
 
-gpg --import public.asc
-gpg --import private.asc
-echo 'GPG keys are imported'
+symlink_bin take_screenshot $SCRIPTS/system

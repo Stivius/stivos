@@ -1,6 +1,6 @@
 #!/bin/bash
-source ../utils/error.sh
-source ../utils/utils.sh
+source $(dirname $(realpath -s $0))/../utils/error.sh
+source $(dirname $(realpath -s $0))/../utils/utils.sh
 
 # required
 sudo apt install -y build-essential git cmake cmake-data pkg-config python3-sphinx python3-packaging libuv1-dev libcairo2-dev libxcb1-dev libxcb-util0-dev libxcb-randr0-dev libxcb-composite0-dev python3-xcbgen xcb-proto libxcb-image0-dev libxcb-ewmh-dev libxcb-icccm4-dev
@@ -18,6 +18,12 @@ cmake .
 make -j$(nproc)
 sudo make install
 symlink_config polybar
+
+symlink_bin polybar_vpn $SCRIPTS/polybar
+symlink_bin polybar_micro $SCRIPTS/polybar
+symlink_bin polybar_music $SCRIPTS/polybar
+symlink_bin polybar_play_pause $SCRIPTS/polybar
+symlink_bin polybar_backlight $SCRIPTS/polybar
 
 popd
 rm -rf ./polybar

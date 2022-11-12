@@ -31,5 +31,5 @@ cp $source_file $target_file
 for i in "${variables[@]}"
 do
   eval "value=\${$i}"
-  sed -Ei "s/\\\$$i\\\$/$value/g" $target_file
+  sed -Ei "s|\\\$$i\\\$|$value|g" $target_file
 done

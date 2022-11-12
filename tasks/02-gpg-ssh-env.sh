@@ -1,6 +1,6 @@
 #!/bin/bash
-source ../utils/error.sh
-source ../utils/utils.sh
+source $(dirname $(realpath -s $0))/../utils/error.sh
+source $(dirname $(realpath -s $0))/../utils/utils.sh
 
 agent_sock=$(gpgconf --list-dirs agent-socket)
 export GPG_AGENT_INFO=${agent_sock}:0:1

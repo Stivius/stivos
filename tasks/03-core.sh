@@ -1,6 +1,6 @@
 #!/bin/bash
-source ../utils/error.sh
-source ../utils/utils.sh
+source $(dirname $(realpath -s $0))/../utils/error.sh
+source $(dirname $(realpath -s $0))/../utils/utils.sh
 
 sudo apt update
 sudo apt install -y \
@@ -25,7 +25,8 @@ sudo mkdir -p /etc/modprobe.d
 sudo mkdir -p /etc/udev/rules.d
 mkdir -p $HOME/.local/bin
 
-mkdir $HOME/Projects
+mkdir -p $HOME/external
+mkdir -p $HOME/Projects
 pushd $HOME/Projects
 
 echo 'Directories have been created'
