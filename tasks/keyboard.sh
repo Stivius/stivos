@@ -1,4 +1,5 @@
 #!/bin/bash
+source ../utils/error.sh
 source ../utils/utils.sh
 
 create_symlink hid_apple.conf $DOTFILES/etc/modprobe.d /etc/modprobe.d sudo

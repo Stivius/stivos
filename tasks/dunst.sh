@@ -1,4 +1,5 @@
 #!/bin/bash
+source ../utils/error.sh
 source ../utils/utils.sh
 
 pushd $HOME
@@ -9,6 +10,7 @@ pushd dunst
 
 make
 sudo make install
+../utils/template.sh $DOTFILES/.config/dunst ../template.env
 symlink_config dunst
 
 popd

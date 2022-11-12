@@ -1,3 +1,5 @@
+#!/bin/bash
+
 function variable_exists {
   return `! test -z "$1"`
 }

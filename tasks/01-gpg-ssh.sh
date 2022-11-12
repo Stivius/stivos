@@ -1,4 +1,5 @@
 #!/bin/bash
+source ../utils/error.sh
 source ../utils/utils.sh
 
 if ! variable_exists "$PERSONAL_KEYGRIP"; then

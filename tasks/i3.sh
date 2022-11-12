@@ -1,4 +1,5 @@
 #!/bin/bash
+source ../utils/error.sh
 source ../utils/utils.sh
 
 wget -O- https://baltocdn.com/i3-window-manager/signing.asc | gpg --dearmor > /etc/apt/trusted.gpg.d/i3wm-signing.gpg
