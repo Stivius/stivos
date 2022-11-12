@@ -35,8 +35,6 @@ for key in ${keygrips[@]}; do
   fi
 done
 
-source $(dirname $(realpath -s $0))/02-gpg-ssh-env.sh
-
 rm -rf $HOME/.ssh && cp -r $SSH_DIR $HOME
 echo 'SSH keys and config are copied'
 

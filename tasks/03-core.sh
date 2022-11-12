@@ -17,7 +17,8 @@ sudo apt install -y \
     incron \
     cargo \
     fd-find \
-    vim
+    vim \
+    xclip
 echo 'Packages have been installed'
 
 sudo mkdir -p /etc/sudoers.d
