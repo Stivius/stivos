@@ -1,6 +1,6 @@
 export STIVOS=$(dirname $(realpath -s $0))
 
-critical_tasks=("00-gpg.sh" "01-gpg-ssh.sh" "02-gpg-ssh-env.env" "03-core.sh" "05-i3.sh")
+critical_tasks=("00-gpg.sh" "01-gpg-ssh.sh" "02-gpg-ssh.env" "03-core.sh" "05-i3.sh", "06-polybar.sh")
 tasks=( $(/usr/bin/ls -A1 ./tasks/ | sort) )
 
 for i in "${tasks[@]}"

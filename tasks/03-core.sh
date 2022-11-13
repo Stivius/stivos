@@ -18,7 +18,8 @@ sudo apt install -y \
     fd-find \
     vim \
     xclip \
-    mlocate
+    mlocate \
+    curl
 echo 'Packages have been installed'
 
 sudo mkdir -p /etc/sudoers.d

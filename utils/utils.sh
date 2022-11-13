@@ -32,7 +32,7 @@ function create_symlink {
   local sudo="${4:-}"
 
   echo "${FUNCNAME[0]}: $file"
-  $sudo rm -f "$target_dir/$file" && $sudo ln -s "$source_dir/$file" "$target_dir/$file"
+  $sudo rm -rf "$target_dir/$file" && $sudo ln -s "$source_dir/$file" "$target_dir/$file"
 }
 
 function symlink_config {
