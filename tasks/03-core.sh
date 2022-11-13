@@ -1,6 +1,6 @@
 #!/bin/bash
-source $(dirname $(realpath -s $0))/../utils/error.sh
-source $(dirname $(realpath -s $0))/../utils/utils.sh
+source $STIVOS/utils/error.sh
+source $STIVOS/utils/utils.sh
 
 sudo apt update
 sudo apt install -y \
@@ -15,16 +15,17 @@ sudo apt install -y \
     apt-transport-https \
     feh \
     incron \
-    cargo \
     fd-find \
     vim \
-    xclip
+    xclip \
+    mlocate
 echo 'Packages have been installed'
 
 sudo mkdir -p /etc/sudoers.d
 sudo mkdir -p /etc/modprobe.d
 sudo mkdir -p /etc/udev/rules.d
 mkdir -p $HOME/.local/bin
+mkdir -p $HOME/.local/share/fonts
 
 mkdir -p $HOME/external
 mkdir -p $HOME/Projects
@@ -47,7 +48,7 @@ source $HOME/.profile
 
 symlink_bin commit_git $SCRIPTS
 symlink_bin sync_git $SCRIPTS
-symlink_bin watch_git $SCRIPTS
+symlink_bin watch_dir $SCRIPTS
 
 echo 'Symlinks have been created'
 
