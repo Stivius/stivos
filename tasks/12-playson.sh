@@ -1,0 +1,2 @@
+# kubectl
+# aws cli

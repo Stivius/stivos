@@ -6,3 +6,10 @@ sudo snap install \
     obsidian \
     telegram-desktop \
     spotify
+
+
+# slack
+# vlc
+# rider
+# duf
+# postman
