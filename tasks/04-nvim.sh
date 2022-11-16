@@ -8,6 +8,7 @@ wget https://github.com/neovim/neovim/releases/download/v0.8.0/nvim-linux64.tar.
 tar xvf nvim-linux64.tar.gz
 cp -r nvim-linux64/* $HOME/.local
 rm -rf nvim-linux64 nvim-linux64.tar.gz
+symlink_config nvim
 
 popd
 

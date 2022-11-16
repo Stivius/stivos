@@ -1,6 +1,3 @@
 #!/bin/bash
 source $STIVOS/utils/error.sh
 source $STIVOS/utils/utils.sh
-
-# wine
-# dotnet

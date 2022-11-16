@@ -19,7 +19,10 @@ sudo apt install -y \
     vim \
     xclip \
     mlocate \
-    curl
+    curl \
+    net-tools \
+    ranger \
+    python3-pip
 echo 'Packages have been installed'
 
 sudo mkdir -p /etc/sudoers.d

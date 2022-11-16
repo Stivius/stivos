@@ -3,13 +3,10 @@ source $STIVOS/utils/error.sh
 source $STIVOS/utils/utils.sh
 
 sudo snap install \
-    obsidian \
     telegram-desktop \
-    spotify
+    spotify \
+    slack \
+    vlc \
+    postman
 
-
-# slack
-# vlc
-# rider
-# duf
-# postman
+sudo snap install --classic rider
