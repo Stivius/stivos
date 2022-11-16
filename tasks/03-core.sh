@@ -26,6 +26,7 @@ sudo mkdir -p /etc/sudoers.d
 sudo mkdir -p /etc/modprobe.d
 sudo mkdir -p /etc/udev/rules.d
 mkdir -p $HOME/.local/bin
+mkdir -p $HOME/.local/bin/helpers
 mkdir -p $HOME/.local/share/fonts
 
 mkdir -p $HOME/external

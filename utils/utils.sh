@@ -50,8 +50,6 @@ function symlink_bin {
 
 function symlink_bin_helper {
   local file="$1"
-  local source_dir="$2"
-
   create_symlink $file "$SCRIPTS/helpers" "$HOME/.local/bin/helpers"
 }
 
